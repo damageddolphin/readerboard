@@ -4,7 +4,7 @@ from networkCheck import networkCheck
 from weatherAlert import *
 from weatherObservations import *
 from weatherForecast import *
-from setup import *
+from settings import *
 
 # Counters to queue the date and time display switch and when to run the weather program.
 timeCycle = 0
