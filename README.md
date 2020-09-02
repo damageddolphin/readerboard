@@ -1,5 +1,11 @@
 # readerboard
-Information display using a RGB LED maxtrix and the Adafruit RGB Matrix Bonnet for Raspberry Pi. See it in action at https://www.youtube.com/watch?v=rZrlYOqqqbk
+Information display using a RGB LED maxtrix and the Adafruit RGB Matrix Bonnet for Raspberry Pi. 
+
+What does this do? It displays the date and time. It will tell you the current weather. It will tell you the weather forecast. It will warn you if there are any active weather alerts. It will tell you news headlines from your favorite RSS news feeds. And for fun, ever hour Sonic the Hedgehog will run across the display. 
+
+Since this is designed to run 24/7, there is also a network checker built in. It checks itself, DNS, gateway, and Internet. It tries to guess why it cannot reach out to the Internet and advises what you may want to check to diagnose the connectivity issues. It will also try to reboot itself periodically to restore network connectivity. 
+
+See it in action at https://www.youtube.com/watch?v=rZrlYOqqqbk when Hurricane Douglas approached the Hawaiian Islands. 
 
 # What you will need
 Raspberry Pi 4. 
@@ -22,7 +28,7 @@ Connect the ribbon cable and the postivie and negative wires to the Adafruit RGB
 
 # Software Intsall
 Download the latest version of Raspian OS lite and flash it to the MicroSD card. 
-Ensure that you have added the SSH file to the boot partition and optionally created your WPA_SUPPLICANT file to automatically connect to WiFi
+Ensure that you have added the SSH file to the boot partition and optionally created your WPA_SUPPLICANT file to automatically connect to WiFi if you will not be using Ethernet.
 
 Insert the MicroSD card into the Raspberry Pi 4 and wait for it to boot up. 
 
@@ -37,7 +43,7 @@ During setup, there will be two prompts. One will ask what type of hat you have.
 
 Once the libraries have been installed, shut down the Raspberry Pi 4 and install the Adafruit RGB Matrix Bonnet. Now is a good time to ensure that the cables are connected correctly especially the polarity of the power. Plug in the 5V 10A power supply into the Adafruit RGB Matrix Bonnet and it will begin to boot up. 
 
-Don't be alarmed if there are some random lights flashing on the RGB board. 
+Don't be alarmed if there are some random lights flashing on the RGB board. Sometimes random signals even from touching the backside of the GPIO pins will make some LEDs illuminate.
 
 # Time to test
 
@@ -48,7 +54,7 @@ Other sample programs will not line up correctly because it is not aware of the 
 # Clone the Readerboard program
 
 Now clone this program and open up settings.py
-Visit https://alerts.weather.gov/ and scroll down to your state to locate your Weather Alert Zone
+Visit https://alerts.weather.gov/ and scroll down to your state to locate your Weather Alert Zone. Currently they are set for Honolulu County and South Shore Zone.
 Click the Zones link and find the zone which is closest to your area and enter that code into weatherAlertCode="NNN000"
 Go back one page and now click Counties and find the code for your county. Enter that code into weatherForecastCode="NNN000"
 
